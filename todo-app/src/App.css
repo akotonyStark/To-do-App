@@ -1,0 +1,117 @@
+.app {
+  display: grid;
+  width: 1440px;
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto;
+  /* grid-template-columns: repeat(7, 1fr); */
+}
+
+body {
+  background-color: #fff;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  /* height: 100vh; */
+}
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: local("Josefin Sans"),
+    url(./fonts/static/JosefinSans-Regular.ttf) format("truetype");
+}
+
+.detailsDark:hover {
+  cursor: pointer;
+  color: hsl(236, 33%, 92%);
+}
+
+.Link {
+  color: hsl(220, 98%, 61%);
+}
+
+.detailsLight:hover {
+  cursor: pointer;
+  color: #25273c;
+}
+
+.radio:hover {
+  border-style: solid !important;
+  border-width: 1px !important;
+  border-radius: 50%;
+  background: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  ) !important;
+}
+
+.addTodo:hover {
+  background-image: linear-gradient(
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  ) !important;
+}
+
+.strikeLight {
+  text-decoration: line-through !important;
+  color: hsl(233, 11%, 84%) !important;
+  cursor: pointer;
+}
+.strikeDark {
+  text-decoration: line-through !important;
+  color: hsl(233, 14%, 35%);
+  cursor: pointer;
+}
+/* 
+.list-component:hover {
+  overflow-y: scroll !important;
+} */
+
+@media only screen and (max-width: 700px) and (min-width: 390px) {
+  body {
+    position: relative;
+    font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+  }
+  .header {
+    height: 100% !important;
+    background-color: #fff !important;
+  }
+
+  .app {
+    display: grid;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .content,
+  .inputField,
+  .toggleHeader {
+    width: 90% !important;
+    left: 5% !important;
+  }
+  .listFooter {
+    width: 80.3% !important;
+    left: 5% !important;
+  }
+
+  .filter {
+    position: absolute !important;
+    width: 100% !important;
+    top: 150% !important;
+    left: 0% !important;
+    display: flex;
+    justify-content: space-around !important;
+    align-items: center;
+    background-color: inherit !important;
+    border-radius: 5px;
+    height: 50px !important;
+  }
+
+  .filter > p {
+    padding: 0px !important;
+  }
+}
