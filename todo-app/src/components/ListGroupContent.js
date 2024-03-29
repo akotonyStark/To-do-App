@@ -121,6 +121,7 @@ function ListGroupContent() {
                   id={item.id}
                   onClick={() => handleCheckItem(item)}
                   className={mode === "dark" ? "strikeDark" : "strikeLight"}
+                  title={item.title}
                 >
                   {item.title}
                 </div>
@@ -129,6 +130,7 @@ function ListGroupContent() {
                   id={item.id}
                   onClick={() => handleCheckItem(item)}
                   style={{ cursor: "pointer" }}
+                  title={item.title}
                 >
                   {item.title}
                 </div>
@@ -165,6 +167,7 @@ function ListGroupContent() {
           ref={allForOneRef}
         >
           <p
+            data-testid="all-todos"
             className={mode === "dark" ? "detailsDark" : "detailsLight"}
             onClick={() => setFilteredList(filterList(list, "all"))}
           >

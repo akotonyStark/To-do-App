@@ -34,45 +34,27 @@ function CreateTodo() {
   };
   return (
     <div>
-      {mode === "dark" ? (
-        <div className="inputField" style={style.inputField}>
+     
+        <div className="inputField" style={mode === "dark" ? style.inputField : style.inputFieldLight}>
           <div>
             <div
               className="addTodo"
-              style={style.unChecked}
+              style={mode === "dark" ?  style.unChecked : style.unCheckedLight}
               onClick={handleAddItem}
             ></div>
           </div>
           <input
-            style={style.textInput}
+            style={ mode === "dark" ?  style.textInput : style.textInputLight}
             value={todo}
+            name="todo-input"
             placeholder="Create a new todo..."
             onChange={(e) => setTodo(e.target.value)}
             onFocus={handleFocus}
             ref={inputRef}
-            onKeyPress={(e) => (e.key === "Enter" ? handleAddItem() : null)}
+            onKeyDown={(e) => (e.key === "Enter" ? handleAddItem() : null)}
           />
         </div>
-      ) : (
-        <div className="inputField" style={style.inputFieldLight}>
-          <div>
-            <div
-              className="addTodo"
-              style={style.unCheckedLight}
-              onClick={handleAddItem}
-            ></div>
-          </div>
-          <input
-            style={style.textInputLight}
-            value={todo}
-            placeholder="Create a new todo..."
-            onChange={(e) => setTodo(e.target.value)}
-            onFocus={handleFocus}
-            ref={inputRef}
-            onKeyPress={(e) => (e.key === "Enter" ? handleAddItem() : null)}
-          />
-        </div>
-      )}
+      
     </div>
   );
 }
