@@ -51,6 +51,14 @@ test('renders todo item in list', () => {
 })
 
 
+// Check if its visible
+test('renders to see if element is visible', () => { 
+  render(<App />)
+  const moon =  screen.queryByTestId('toggle-button')
+  expect(moon).toBeVisible()
+})
+
+
 
 
 

@@ -23,5 +23,5 @@ const MockComponent = () => {
 it('should render correct amount of incomplete tasks', async() => {
     render(<MockComponent/>)
     const  paragraphElement = screen.getByText(/5 items left/i)
-    expect(paragraphElement).toBeInTheDocument()
+    expect(paragraphElement).toBeTruthy()
 })
